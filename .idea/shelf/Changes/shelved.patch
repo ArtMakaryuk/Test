@@ -1,0 +1,1928 @@
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+new file mode 100644
+--- /dev/null	(date 1673408873441)
++++ b/.idea/.gitignore	(date 1673408873441)
+@@ -0,0 +1,8 @@
++# Default ignored files
++/shelf/
++/workspace.xml
++# Editor-based HTTP Client requests
++/httpRequests/
++# Datasource local storage ignored files
++/dataSources/
++/dataSources.local.xml
+Index: src/Test24.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/Test24.java b/src/Test24.java
+new file mode 100644
+--- /dev/null	(date 1675062419392)
++++ b/src/Test24.java	(date 1675062419392)
+@@ -0,0 +1,15 @@
++public class Test24 {
++    public static void main(String[] args) {
++        int value = -4;
++        System.out.println(isPowerOfTwo(value));
++    }
++    public static boolean isPowerOfTwo(int value) {
++        int value1 = Math.abs(value);
++        boolean res = false;
++        for (int i = 0; i < value1; i++) {
++            res = (Math.pow(2,i) ==  value1);
++            if (res) {break;}
++        }
++        return res;
++    }
++}
+Index: Test.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Test.iml b/Test.iml
+new file mode 100644
+--- /dev/null	(date 1673408856958)
++++ b/Test.iml	(date 1673408856958)
+@@ -0,0 +1,11 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="JAVA_MODULE" version="4">
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
++    <exclude-output />
++    <content url="file://$MODULE_DIR$">
++      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
++    </content>
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+Index: src/Test23.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/Test23.java b/src/Test23.java
+new file mode 100644
+--- /dev/null	(date 1674793621873)
++++ b/src/Test23.java	(date 1674793621873)
+@@ -0,0 +1,39 @@
++import java.util.Objects;
++
++public class Test23 {
++    public static void main(String[] args) {
++        System.out.println();
++
++
++    }
++    public final class ComplexNumber {
++        private final double re;
++        private final double im;
++
++        public ComplexNumber(double re, double im) {
++            this.re = re;
++            this.im = im;
++        }
++
++        public double getRe() {
++            return re;
++        }
++
++        public double getIm() {
++            return im;
++        }
++
++        @Override
++        public boolean equals(Object o) {
++            if (this == o) return true;
++            if (o == null || getClass() != o.getClass()) return false;
++            ComplexNumber that = (ComplexNumber) o;
++            return Double.compare(that.re, re) == 0 && Double.compare(that.im, im) == 0;
++        }
++
++        @Override
++        public int hashCode() {
++            return Objects.hash(re, im);
++        }
++    }
++}
+\ No newline at end of file
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(date 1673408856996)
++++ b/.idea/modules.xml	(date 1673408856996)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/Test.iml" filepath="$PROJECT_DIR$/Test.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: src/NewTest1.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/NewTest1.java b/src/NewTest1.java
+new file mode 100644
+--- /dev/null	(date 1675667809992)
++++ b/src/NewTest1.java	(date 1675667809992)
+@@ -0,0 +1,28 @@
++import java.util.Arrays;
++
++public class NewTest1 {
++    public static void main(String[] args) {
++        int[] nums = {3, 2, 4};
++        int target = 6;
++        Solution solution = new Solution();
++        System.out.println(Arrays.toString(solution.twoSum(nums, target)));
++    }
++}
++class Solution {
++    public int[] twoSum(int[] nums, int target) {
++        int[] res = new int[2];
++        int i = 0;
++        int j = i+1;
++        for (; i < nums.length; i++) {
++            while (j<nums.length){
++                if (nums[i] + nums[j] == target) {
++                    res[0] = i;
++                    res[1] = j;
++                    return res;
++                }
++                j++;
++            }
++        }
++        return res;
++    }
++}
+\ No newline at end of file
+Index: src/Test25/Label.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/Test25/Label.java b/src/Test25/Label.java
+new file mode 100644
+--- /dev/null	(date 1675218294961)
++++ b/src/Test25/Label.java	(date 1675218294961)
+@@ -0,0 +1,5 @@
++package Test25;
++
++enum  Label {
++        SPAM, NEGATIVE_TEXT, TOO_LONG, OK
++}
+Index: src/Test25/KeywordAnalyzer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/Test25/KeywordAnalyzer.java b/src/Test25/KeywordAnalyzer.java
+new file mode 100644
+--- /dev/null	(date 1675664998675)
++++ b/src/Test25/KeywordAnalyzer.java	(date 1675664998675)
+@@ -0,0 +1,17 @@
++package Test25;
++
++public abstract class KeywordAnalyzer implements TextAnalyzer{
++
++    protected abstract String[] getKeywords();
++    protected abstract Label getLabel();
++
++    public Label processText(String text) {
++        String[] str = getKeywords();
++        for (String at : str) {
++            if(text.contains(at)) {
++                return getLabel();
++            }
++        }
++        return Label.OK;
++    }
++}
+Index: src/Test2.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/Test2.java b/src/Test2.java
+new file mode 100644
+--- /dev/null	(date 1674187541305)
++++ b/src/Test2.java	(date 1674187541305)
+@@ -0,0 +1,24 @@
++import java.util.Scanner;
++
++class Test2{
++    public static void main(String[] args) {
++        Scanner sc = new Scanner(System.in);
++        int z = sc.nextInt();
++        int s = sc.nextInt();
++        int z1 = Math.abs(z);
++        int s1 = Math.abs(s);
++        sc.close();
++        String num1 = Integer.toString(z1);
++        String num2 = Integer.toString(s1);
++        if (z1 > 99 && z1 < 1000) {
++           if (num1.charAt(1) == num2.charAt(0)) {
++                System.out.println("true");
++            } else {
++                System.out.println("false");
++            }
++        } else {
++            System.out.println("Error");
++        }
++
++    }
++}
+\ No newline at end of file
+Index: src/Test25/SpamAnalyzer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/Test25/SpamAnalyzer.java b/src/Test25/SpamAnalyzer.java
+new file mode 100644
+--- /dev/null	(date 1675661300348)
++++ b/src/Test25/SpamAnalyzer.java	(date 1675661300348)
+@@ -0,0 +1,22 @@
++package Test25;
++
++public class SpamAnalyzer extends KeywordAnalyzer{
++
++    private String[] keywords;
++
++    public SpamAnalyzer(String[] keywords) {
++        this.keywords = keywords;
++    }
++
++    @Override
++    protected String[] getKeywords() {
++        return keywords;
++    }
++
++    @Override
++    protected Label getLabel() {
++        return Label.SPAM;
++    }
++}
++
++
+Index: src/Test25/NegativeTextAnalyzer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/Test25/NegativeTextAnalyzer.java b/src/Test25/NegativeTextAnalyzer.java
+new file mode 100644
+--- /dev/null	(date 1675661300333)
++++ b/src/Test25/NegativeTextAnalyzer.java	(date 1675661300333)
+@@ -0,0 +1,16 @@
++package Test25;
++
++public class NegativeTextAnalyzer extends KeywordAnalyzer {
++
++    private String[] KEYWORDS = {":(", "=(", ":|"};
++
++    @Override
++    protected String[] getKeywords() {
++        return KEYWORDS;
++    }
++
++    @Override
++    protected Label getLabel() {
++        return Label.NEGATIVE_TEXT;
++    }
++}
+Index: src/Test25/TextAnalyzer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/Test25/TextAnalyzer.java b/src/Test25/TextAnalyzer.java
+new file mode 100644
+--- /dev/null	(date 1675266542397)
++++ b/src/Test25/TextAnalyzer.java	(date 1675266542397)
+@@ -0,0 +1,5 @@
++package Test25;
++
++public interface TextAnalyzer {
++    Label processText(String text);
++}
+Index: src/Test3.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/Test3.java b/src/Test3.java
+new file mode 100644
+--- /dev/null	(date 1674188026053)
++++ b/src/Test3.java	(date 1674188026053)
+@@ -0,0 +1,18 @@
++import java.util.Scanner;
++
++public class Test3 {
++    public static void main(String[] args) {
++        Scanner sc = new Scanner(System.in);
++        int a = sc.nextInt();
++        int b = sc.nextInt();
++        if (a > b) {
++            System.out.println(">");
++        }
++        else if (a < b) {
++            System.out.println("<");
++        }
++        else if (a == b) {
++            System.out.println("=");
++        }
++    }
++}
+Index: src/Test25/Test25.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/Test25/Test25.java b/src/Test25/Test25.java
+new file mode 100644
+--- /dev/null	(date 1675665068836)
++++ b/src/Test25/Test25.java	(date 1675665068836)
+@@ -0,0 +1,74 @@
++package Test25;
++
++public class Test25 {
++    public static void main(String[] args) {
++        // инициализация анализаторов для проверки в порядке данного набора анализаторов
++        String[] spamKeywords = {"spam", "bad"};
++        int commentMaxLength = 40;
++        TextAnalyzer[] textAnalyzers1 = {
++                new SpamAnalyzer(spamKeywords),
++                new NegativeTextAnalyzer(),
++                new TooLongTextAnalyzer(commentMaxLength)
++        };
++        TextAnalyzer[] textAnalyzers2 = {
++                new SpamAnalyzer(spamKeywords),
++                new TooLongTextAnalyzer(commentMaxLength),
++                new NegativeTextAnalyzer()
++        };
++        TextAnalyzer[] textAnalyzers3 = {
++                new TooLongTextAnalyzer(commentMaxLength),
++                new SpamAnalyzer(spamKeywords),
++                new NegativeTextAnalyzer()
++        };
++        TextAnalyzer[] textAnalyzers4 = {
++                new TooLongTextAnalyzer(commentMaxLength),
++                new NegativeTextAnalyzer(),
++                new SpamAnalyzer(spamKeywords)
++        };
++        TextAnalyzer[] textAnalyzers5 = {
++                new NegativeTextAnalyzer(),
++                new SpamAnalyzer(spamKeywords),
++                new TooLongTextAnalyzer(commentMaxLength)
++        };
++        TextAnalyzer[] textAnalyzers6 = {
++                new NegativeTextAnalyzer(),
++                new TooLongTextAnalyzer(commentMaxLength),
++                new SpamAnalyzer(spamKeywords)
++        };
++        // тестовые комментарии
++        String[] tests = new String[8];
++        tests[0] = "This comment is so good.";                            // OK
++        tests[1] = "This comment is so Loooooooooooooooooooooooooooong."; // TOO_LONG
++        tests[2] = "Very negative comment !!!!=(!!!!;";                   // NEGATIVE_TEXT
++        tests[3] = "Very BAAAAAAAAAAAAAAAAAAAAAAAAD comment with :|;";    // NEGATIVE_TEXT or TOO_LONG
++        tests[4] = "This comment is so bad....";                          // SPAM
++        tests[5] = "The comment is a spam, maybeeeeeeeeeeeeeeeeeeeeee!";  // SPAM or TOO_LONG
++        tests[6] = "Negative bad :( spam.";                               // SPAM or NEGATIVE_TEXT
++        tests[7] = "Very bad, very neg =(, very ..................";      // SPAM or NEGATIVE_TEXT or TOO_LONG
++        TextAnalyzer[][] textAnalyzers = {textAnalyzers1, textAnalyzers2, textAnalyzers3,
++                textAnalyzers4, textAnalyzers5, textAnalyzers6};
++        Test25 testObject = new Test25();
++        int numberOfAnalyzer; // номер анализатора, указанный в идентификаторе textAnalyzers{№}
++        int numberOfTest = 0; // номер теста, который соответствует индексу тестовых комментариев
++        for (String test : tests) {
++            numberOfAnalyzer = 1;
++            System.out.print("test #" + numberOfTest + ": ");
++            System.out.println(test);
++            for (TextAnalyzer[] analyzers : textAnalyzers) {
++                System.out.print(numberOfAnalyzer + ": ");
++                System.out.println(testObject.checkLabels(analyzers, test));
++                numberOfAnalyzer++;
++            }
++            numberOfTest++;
++        }
++    }
++    public static Label checkLabels(TextAnalyzer[] analyzers, String text) {
++        for (TextAnalyzer analyzer : analyzers) {
++            Label result = analyzer.processText(text);
++            if (result != Label.OK) {
++                return result;
++            }
++        }
++        return Label.OK;
++    }
++}
+Index: src/Test22.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/Test22.java b/src/Test22.java
+new file mode 100644
+--- /dev/null	(date 1674618503563)
++++ b/src/Test22.java	(date 1674618503563)
+@@ -0,0 +1,41 @@
++import java.util.Arrays;
++
++public class Test22 {
++    public static void main(String[] args) {
++        String[] roles = {
++                "Городничий", "Аммос Федорович",
++                "Артемий Филиппович",
++                "Лука Лукич"};
++        String[] textLines = {
++                "Городничий: Я пригласил вас, господа, с тем, чтобы сообщить вам пренеприятное известие: к нам едет ревизор.",
++                "Аммос Федорович: Как ревизор?",
++                "Артемий Филиппович: Как ревизор?",
++                "Городничий: Ревизор из Петербурга, инкогнито. И еще с секретным предписаньем.",
++                "Аммос Федорович: Вот те на!",
++                "Артемий Филиппович: Вот не было заботы, так подай!",
++                "Лука Лукич: Господи боже! еще и с секретным предписаньем!"};
++        String answer = printTextPerRole(roles, textLines);
++        System.out.println(answer);
++    }
++
++    private static String printTextPerRole(String[] roles, String[] textLines) {
++        StringBuilder rolebytext = new StringBuilder();
++        for (String role : roles) {
++            rolebytext.append(role);
++            rolebytext.append(":");
++            rolebytext.append("\n");
++            for (int i = 0; i < textLines.length; i++) {
++                if (textLines[i].startsWith(role + ":")) {
++                    rolebytext.append(i + 1);
++                    rolebytext.append(")");
++                    rolebytext.append(textLines[i].substring(role.length() + 1));
++                    rolebytext.append("\n");
++                }
++            }
++            rolebytext.append("\n");
++        }
++        return rolebytext.toString();
++    }
++}
++
++
+Index: src/NewTest2.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/NewTest2.java b/src/NewTest2.java
+new file mode 100644
+--- /dev/null	(date 1675675307390)
++++ b/src/NewTest2.java	(date 1675675307390)
+@@ -0,0 +1,28 @@
++import java.util.Arrays;
++
++public class NewTest2 {
++    public static void main(String[] args) {
++        int[] nums = {1,2,3,4,4,3,2,1};
++        int n = 4;
++        Solution2 solution2 = new Solution2();
++        System.out.println(Arrays.toString(solution2.shuffle(nums,n)));
++    }
++}
++class Solution2 {
++    public int[] shuffle(int[] nums, int n) {
++        int[] nums1 = new int[n];
++        int[] nums2 = new int[n];
++        int[] res = new int[2*n];
++        for (int i = 0; i < n; i++) {
++            nums1[i] = nums[i];
++            nums2[i] = nums[i+n];
++        }
++        int j = 0;
++        for (int i = 0; i <= n*2-1; i++) {
++            res[i] = nums1[j];
++            res[++i] = nums2[j];
++            j++;
++        }
++        return res;
++    }
++}
+\ No newline at end of file
+Index: src/Test25/TooLongTextAnalyzer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/Test25/TooLongTextAnalyzer.java b/src/Test25/TooLongTextAnalyzer.java
+new file mode 100644
+--- /dev/null	(date 1675661300333)
++++ b/src/Test25/TooLongTextAnalyzer.java	(date 1675661300333)
+@@ -0,0 +1,19 @@
++package Test25;
++
++public class TooLongTextAnalyzer implements TextAnalyzer {
++
++    private int maxLength;
++
++    public TooLongTextAnalyzer(int maxLength) {
++        this.maxLength = maxLength;
++    }
++
++
++    @Override
++    public Label processText(String text) {
++        if (text.length() > maxLength) {
++            return Label.TOO_LONG;
++        }
++        return Label.OK;
++    }
++}
+Index: src/Test4.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/Test4.java b/src/Test4.java
+new file mode 100644
+--- /dev/null	(date 1674188639377)
++++ b/src/Test4.java	(date 1674188639377)
+@@ -0,0 +1,12 @@
++import java.util.Scanner;
++
++public class Test4 {
++    public static void main(String[] args) {
++        Scanner sc = new Scanner(System.in);
++        double a = sc.nextDouble();
++        double b = sc.nextDouble();
++        double c = Math.sqrt(Math.pow(a,2)+Math.pow(b,2));
++        double P = Math.round(a+b+c);
++        System.out.println(P);
++    }
++}
+Index: src/HelloWold.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/HelloWold.java b/src/HelloWold.java
+new file mode 100644
+--- /dev/null	(date 1674793171999)
++++ b/src/HelloWold.java	(date 1674793171999)
+@@ -0,0 +1,3 @@
++
++
++
+Index: src/LeetCode/Ex1.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/LeetCode/Ex1.java b/src/LeetCode/Ex1.java
+new file mode 100644
+--- /dev/null	(date 1675750740656)
++++ b/src/LeetCode/Ex1.java	(date 1675750740656)
+@@ -0,0 +1,34 @@
++package LeetCode;
++
++import java.util.Arrays;
++
++public class Ex1 {
++    public static void main(String[] args) {
++        String[] sentences = {"v"};
++        Solution1 solution1 = new Solution1();
++        System.out.println(solution1.mostWordsFound(sentences));
++    }
++
++}
++class Solution1 {
++    public int mostWordsFound(String[] sentences) {
++        int res = 0;
++        for (String sentence : sentences) {
++            int count = 0;
++            if (sentence.length() != 0) {
++                count++;
++                for (int i = 0; i < sentence.length(); i++) {
++                    if (sentence.charAt(i) == ' ') {
++                        count++;
++
++                    }
++                }
++                if (res < count) {
++                    res = count;
++                }
++            }
++
++        }
++        return res;
++    }
++}
+\ No newline at end of file
+Index: .idea/encodings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/encodings.xml b/.idea/encodings.xml
+new file mode 100644
+--- /dev/null	(date 1674536007571)
++++ b/.idea/encodings.xml	(date 1674536007571)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="Encoding">
++    <file url="file://$PROJECT_DIR$/src/Test22.java" charset="windows-1251" />
++  </component>
++</project>
+\ No newline at end of file
+Index: src/Test21.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/Test21.java b/src/Test21.java
+new file mode 100644
+--- /dev/null	(date 1674626425614)
++++ b/src/Test21.java	(date 1674626425614)
+@@ -0,0 +1,28 @@
++import java.util.Arrays;
++
++public class Test21 {
++    public static void main(String[] args) {
++        int[] a1 = {1, 4, 6};
++        int[] a2 = {11, 12, 13};
++        System.out.println(Arrays.toString(mergeArrays(a1, a2)));
++    }
++
++    public static int[] mergeArrays(int[] a1, int[] a2) {
++        int[] a3 = new int[a1.length + a2.length];
++        int i = 0, j = 0, k = 0;
++        while (i < a1.length && j < a2.length) {
++            if (a1[i] < a2[j]) {
++                a3[k++] = a1[i++];
++            } else {
++                a3[k++] = a2[j++];
++            }
++        }
++        while (i < a1.length) {
++            a3[k++] = a1[i++];
++        }
++        while (j < a2.length) {
++            a3[k++] = a2[j++];
++        }
++        return a3;
++    }
++}
+Index: src/NewTest3.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/NewTest3.java b/src/NewTest3.java
+new file mode 100644
+--- /dev/null	(date 1675675681792)
++++ b/src/NewTest3.java	(date 1675675681792)
+@@ -0,0 +1,21 @@
++import java.util.Arrays;
++
++public class NewTest3 {
++    public static void main(String[] args) {
++        int[] nums = {1,2,1};
++
++        Solution3 solution3 = new Solution3();
++        System.out.println(Arrays.toString(solution3.getConcatenation(nums)));
++    }
++}
++class Solution3 {
++    public int[] getConcatenation(int[] nums) {
++
++        int[] ans = new int[2* nums.length];
++        for (int i = 0; i < nums.length; i++) {
++            ans[i] = nums[i];
++            ans[i+ nums.length]=nums[i];
++        }
++        return ans;
++    }
++}
+\ No newline at end of file
+Index: src/myClass.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/myClass.java b/src/myClass.java
+new file mode 100644
+--- /dev/null	(date 1675753286139)
++++ b/src/myClass.java	(date 1675753286139)
+@@ -0,0 +1,38 @@
++public class myClass {
++    public static void main(String[] args) {
++        System.out.println(getCallerClassAndMethodName());
++        m1();
++    }
++
++    static void m1() {
++        System.out.println(getCallerClassAndMethodName());
++        m2();
++    }
++
++    static void m2() {
++        System.out.println(getCallerClassAndMethodName());
++        m3();
++    }
++
++    static void m3() {
++        System.out.println(getCallerClassAndMethodName());
++    }
++
++    public static String getCallerClassAndMethodName() {
++        StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
++        String ans = "";
++        if (stackTraceElements.length >= 3) {
++            try {
++                StackTraceElement element = stackTraceElements[3];
++                String className = element.getClassName();
++                String methodName = element.getMethodName();
++                ans = className + "#" + methodName;
++            } catch (Exception e) {
++                return null;
++            }
++        }
++        return ans;
++    }
++
++}
++
+Index: src/LeetCode/Ex2.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/LeetCode/Ex2.java b/src/LeetCode/Ex2.java
+new file mode 100644
+--- /dev/null	(date 1675752290093)
++++ b/src/LeetCode/Ex2.java	(date 1675752290093)
+@@ -0,0 +1,22 @@
++package LeetCode;
++
++import java.util.regex.Matcher;
++import java.util.regex.Pattern;
++
++public class Ex2 {
++    public static void main(String[] args) {
++        String command = "(al)G(al)()()G";
++        Solution2 solution = new Solution2();
++        System.out.println(solution.interpret(command));
++    }
++
++}
++
++class Solution2 {
++    public String interpret(String command) {
++        String ans = command.replaceAll("[(]{1}[)]{1}", "o");
++        String ans2 = ans.replaceAll("[(]{1}[a]{1}[l]{1}[)]{1}", "al");
++        return ans2;
++
++    }
++}
+\ No newline at end of file
+Index: src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/Main.java b/src/Main.java
+new file mode 100644
+--- /dev/null	(date 1675913617459)
++++ b/src/Main.java	(date 1675913617459)
+@@ -0,0 +1,138 @@
++//интерфейс для управления роботом
++interface RobotConnection extends AutoCloseable{
++    void moveRobotTo(int x, int y);
++    @Override
++    void close();
++}
++//интерфейс для копирования исключений
++interface Dublicated{
++    public Dublicated dublic();
++}
++//класc исключения RobotConnectionException при подключении к роботу
++class RobotConnectionException extends RuntimeException implements Dublicated {
++    public RobotConnectionException() {
++        super();
++    }
++    @Override
++    public Dublicated dublic(){
++        return new RobotConnectionException();
++    }
++}
++//класc исключения отличный от RobotConnectionException при подключении к роботу
++class MyException extends RuntimeException implements Dublicated {
++    public MyException() {
++        super();
++    }
++    @Override
++    public Dublicated dublic() {
++        return new MyException();
++    }
++}
++//основной класс входа в программу
++public class Main {
++    static int i; // переменная для перебора попыток полключений, что бы подключиться 3 раза
++    static int repeatNumber; // переменная для перебора 27 вариантов различных ошибок из массива класса Test
++    static public int getRepeatNumber(){
++        return repeatNumber;
++    }
++    static public int getI(){
++        return i;
++    }
++    public static void main(String args[])  {
++        int toX = 1;
++        int toY = 2;
++        RobotConnectionManager robotConnectionManager = new RobotConnectionManager();
++        for(repeatNumber = 0; repeatNumber < 26; repeatNumber++) {
++            System.out.println("\r" + "repeat number: " + repeatNumber);
++            StringBuilder builder = new StringBuilder();
++            String[] names = {"RCM: ", "RC: ", "Close: "};
++            int i = 0;
++            for (String name : names){
++                builder.append(name).append(Test.getTest(i) != null?Test.getTest(i).toString():"OK").append("||");
++                i++;
++            }
++            System.out.println("Exeption List: " + builder.toString());
++            try {
++                moveRobot(robotConnectionManager, toX, toY); // запуск метода для решения задачи
++            }
++            catch (Throwable t){
++                System.out.println("Exeption catch in big cicle");
++            }
++        }
++    }
++    //метод который мы создаем для управления роботом (то что нужно для решения задачи)
++    public static void moveRobot(RobotConnectionManager robotConnectionManager, int toX, int toY) {
++        for (int i = 1; i <= 3; i++) {
++            try (RobotConnection connection = robotConnectionManager.getConnection()) {
++                connection.moveRobotTo(toX, toY);
++                i = 4;
++            } catch (RobotConnectionException e) {
++                if (i == 3) {
++                    throw e;
++                }
++            }
++        }
++    }
++
++    //класс создает объект для управления роботом
++    //ошибка в соответсвии с массивом класса test выбрасываеться в 1 попытку подключения
++    static class RobotConnectionManager {
++        RobotConnection getConnection(){
++            System.out.println("attempt number: " + Main.getI() + ". start RCM");
++            if ((Test.getTest(0) instanceof Throwable) && (Main.getI() == 1)){
++                System.out.println("RCM Exeption");
++                throw Test.getTest(0);
++            }
++            else{
++                System.out.println("RCM OK");
++                return new RobotUse();
++            }
++        }
++    }
++    //класс управляет роботом
++    //ошибка в соответсвии с массивом класса test выбрасываеться в 1 попытку подключения
++    static class RobotUse implements RobotConnection {
++        @Override
++        public void moveRobotTo(int x, int y){
++            System.out.println("attempt number: " + Main.getI() + ". start RC");
++            if ((Test.getTest(1) instanceof Throwable) && (Main.getI() == 1)){
++                System.out.println("RC Exeption");
++                throw Test.getTest(1);
++            }
++            else{
++                System.out.println("Move robot OK" );
++            }
++        }
++        @Override
++        public void close(){
++            System.out.println("attempt number: " + Main.getI() + ". start close");
++            if ((Test.getTest(2) instanceof Throwable) && (Main.getI() == 1)){
++                System.out.println("Close Exeption");
++                throw Test.getTest(2);
++            }
++            else{
++                System.out.println("Close OK");
++            }
++        }
++    }
++
++    // класс массива ошибок, 27 вариантов размещений из 2 ошибок в 3 классах программы
++    static class Test {
++        static RuntimeException[] ExceptionArray = {null, new RobotConnectionException(), new MyException()};
++        static RuntimeException getTest(int args){
++            int i = 0;
++            RuntimeException[][] testArray = new RuntimeException[27][3];
++            for (RuntimeException k : ExceptionArray){
++                for (RuntimeException t : ExceptionArray){
++                    for (RuntimeException s : ExceptionArray){
++                        testArray[i][0] = k != null ? (RuntimeException) ((Dublicated) k).dublic():null;
++                        testArray[i][1] = t != null ? (RuntimeException) ((Dublicated) t).dublic():null;
++                        testArray[i][2] = s != null ? (RuntimeException) ((Dublicated) s).dublic():null;
++                        i++;
++                    }
++                }
++            }
++            return testArray[Main.getRepeatNumber()][args];
++        }
++    }
++}
+\ No newline at end of file
+Index: src/JavaBlackBelt/collections/map_interface/HashMapEx1.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/JavaBlackBelt/collections/map_interface/HashMapEx1.java b/src/JavaBlackBelt/collections/map_interface/HashMapEx1.java
+new file mode 100644
+--- /dev/null	(date 1678353310960)
++++ b/src/JavaBlackBelt/collections/map_interface/HashMapEx1.java	(date 1678353310960)
+@@ -0,0 +1,37 @@
++package JavaBlackBelt.collections.map_interface;
++
++import java.util.HashMap;
++import java.util.Map;
++
++public class HashMapEx1 {
++    public static void main(String[] args) {
++        Map<Integer, String> map1 = new HashMap<>();
++        map1.put(1000,"Artur Makaryuk");
++        map1.put(3211,"Elena Makaryuk");
++        map1.put(5464,"Ivan Ivanov");
++        map1.put(564,"Nikolay Petrov");
++        map1.put(12334,"Nikolay Petrov");
++        map1.putIfAbsent(1000,"Oleg Ivanov");
++//        map1.put(null,"Sergey Petrov");
++//        map1.put(1231233, null);
++        System.out.println(map1);
++//        System.out.println(map1.get(213));
++        map1.remove(5464);
++//        System.out.println(map1);
++//        System.out.println(map1.containsValue("Artur Makaryuk"));
++//        System.out.println(map1.containsKey(1000));
++//        System.out.println(map1.keySet());
++        System.out.println(map1.values());
++
++        for (Map.Entry<Integer, String> entry: map1.entrySet()) {
++            System.out.println(entry.getKey() + " : " + entry.getValue());
++        }
++
++        Map<Integer, String > map2 = new HashMap<>(16, 0.75f);
++        map2.put(1, "Hello");
++        map2.put(11, "Bye");
++        map2.put(5, "Yes");
++        map2.put(153, "Zhopa");
++
++    }
++}
+Index: src/LeetCode/Ex4.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/LeetCode/Ex4.java b/src/LeetCode/Ex4.java
+new file mode 100644
+--- /dev/null	(date 1676011218004)
++++ b/src/LeetCode/Ex4.java	(date 1676011218004)
+@@ -0,0 +1,27 @@
++package LeetCode;
++
++import java.util.Arrays;
++
++public class Ex4 {
++    public static void main(String[] args) {
++        int n = 4421;
++        Solution4 solution = new Solution4();
++        System.out.println(solution.subtractProductAndSum(n));
++    }
++}
++class Solution4 {
++    public int subtractProductAndSum(int n) {
++        String s = Integer.toString(n);
++        int[] nums = new int[s.length()];
++        int res = 0;
++        int sum = 0;
++        int multi = 1;
++        for (int i = 0; i < s.length(); i++) {
++            nums[i] = s.charAt(i) - '0';
++            multi *= nums[i];
++            sum += nums[i];
++        }
++        res = multi-sum;
++    return res;
++    }
++}
+\ No newline at end of file
+Index: src/LeetCode/Ex3.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/LeetCode/Ex3.java b/src/LeetCode/Ex3.java
+new file mode 100644
+--- /dev/null	(date 1675929009875)
++++ b/src/LeetCode/Ex3.java	(date 1675929009875)
+@@ -0,0 +1,25 @@
++package LeetCode;
++
++import java.util.Arrays;
++
++public class Ex3 {
++    public static void main(String[] args) {
++        int[] digits = {7,2,8,5,0,9,1,2,9,5,3,6,6,7,3,2,8,4,3,7,9,5,7,7,4,7,4,9,4,7,0,1,1,1,7,4,0,0,6};
++        Solution3 solution = new Solution3();
++        System.out.println(Arrays.toString(solution.plusOne(digits)));
++    }
++}
++    class Solution3 {
++        public int[] plusOne(int[] digits) {
++            for (int i = digits.length - 1; i >= 0; i--) {
++                if (digits[i] < 9) {
++                    digits[i]++;
++                    return digits;
++                }
++                digits[i] = 0;
++            }
++            digits = new int[digits.length + 1];
++            digits[0] = 1;
++            return digits;
++        }
++    }
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1673408946523)
++++ b/.idea/misc.xml	(date 1673408946523)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" project-jdk-name="19" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/out" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+--- /dev/null	(date 1678679438285)
++++ b/.gitignore	(date 1678679438285)
+@@ -0,0 +1,2 @@
++# Project exclude paths
++/out/
+\ No newline at end of file
+Index: src/LeetCode/Ex5.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/LeetCode/Ex5.java b/src/LeetCode/Ex5.java
+new file mode 100644
+--- /dev/null	(date 1676013965115)
++++ b/src/LeetCode/Ex5.java	(date 1676013965115)
+@@ -0,0 +1,35 @@
++package LeetCode;
++
++import java.util.Arrays;
++
++public class Ex5 {
++    public static void main(String[] args) {
++        int[] nums = {0,1,2,3,4};
++        int[] index = {0,1,2,2,1};
++        Solution5 solution = new Solution5();
++        System.out.println(Arrays.toString(solution.createTargetArray(nums,index)));
++    }
++}
++class Solution5 {
++    public int[] createTargetArray(int[] nums, int[] index) {
++        int[] target = new int[nums.length];
++
++        for(int i = 0; i < index.length; i++){
++            int ind = index[i];
++
++            if(ind < i){
++                int j = i;
++                while(j > ind){
++                    target[j] = target[j - 1];
++                    target[j - 1] = nums[i];
++                    j--;
++                }
++            }
++            else{
++                target[i] = nums[ind];
++            }
++
++        }
++        return target;
++    }
++}
+\ No newline at end of file
+Index: src/Module4ex2/AbstractSendable.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/Module4ex2/AbstractSendable.java b/src/Module4ex2/AbstractSendable.java
+new file mode 100644
+--- /dev/null	(date 1676349320533)
++++ b/src/Module4ex2/AbstractSendable.java	(date 1676349320533)
+@@ -0,0 +1,40 @@
++package Module4ex2;
++
++/*
++Абстрактный класс,который позволяет абстрагировать логику хранения
++источника и получателя письма в соответствующих полях класса.
++*/
++public abstract class AbstractSendable implements Sendable {
++
++    protected final String from;
++    protected final String to;
++
++    public AbstractSendable(String from, String to) {
++        this.from = from;
++        this.to = to;
++    }
++
++    @Override
++    public String getFrom() {
++        return from;
++    }
++
++    @Override
++    public String getTo() {
++        return to;
++    }
++
++    @Override
++    public boolean equals(Object o) {
++        if (this == o) return true;
++        if (o == null || getClass() != o.getClass()) return false;
++
++        AbstractSendable that = (AbstractSendable) o;
++
++        if (!from.equals(that.from)) return false;
++        if (!to.equals(that.to)) return false;
++
++        return true;
++    }
++
++}
+\ No newline at end of file
+Index: src/Module4ex2/Sendable.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/Module4ex2/Sendable.java b/src/Module4ex2/Sendable.java
+new file mode 100644
+--- /dev/null	(date 1676349297788)
++++ b/src/Module4ex2/Sendable.java	(date 1676349297788)
+@@ -0,0 +1,10 @@
++package Module4ex2;
++
++/*
++Интерфейс: сущность, которую можно отправить по почте.
++У такой сущности можно получить от кого и кому направляется письмо.
++*/
++public interface Sendable {
++    String getFrom();
++    String getTo();
++}
+\ No newline at end of file
+Index: src/Module4ex2/MailPackage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/Module4ex2/MailPackage.java b/src/Module4ex2/MailPackage.java
+new file mode 100644
+--- /dev/null	(date 1676349362695)
++++ b/src/Module4ex2/MailPackage.java	(date 1676349362695)
+@@ -0,0 +1,31 @@
++package Module4ex2;
++
++/*
++Посылка, содержимое которой можно получить с помощью метода `getContent`
++*/
++public class MailPackage extends AbstractSendable {
++    private final Package content;
++
++    public MailPackage(String from, String to, Package content) {
++        super(from, to);
++        this.content = content;
++    }
++
++    public Package getContent() {
++        return content;
++    }
++
++    @Override
++    public boolean equals(Object o) {
++        if (this == o) return true;
++        if (o == null || getClass() != o.getClass()) return false;
++        if (!super.equals(o)) return false;
++
++        MailPackage that = (MailPackage) o;
++
++        if (!content.equals(that.content)) return false;
++
++        return true;
++    }
++
++}
+\ No newline at end of file
+Index: src/Module4ex2/MailMessage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/Module4ex2/MailMessage.java b/src/Module4ex2/MailMessage.java
+new file mode 100644
+--- /dev/null	(date 1676349345596)
++++ b/src/Module4ex2/MailMessage.java	(date 1676349345596)
+@@ -0,0 +1,32 @@
++package Module4ex2;
++
++/*
++Письмо, у которого есть текст, который можно получить с помощью метода `getMessage`
++*/
++public class MailMessage extends AbstractSendable {
++
++    private final String message;
++
++    public MailMessage(String from, String to, String message) {
++        super(from, to);
++        this.message = message;
++    }
++
++    public String getMessage() {
++        return message;
++    }
++
++    @Override
++    public boolean equals(Object o) {
++        if (this == o) return true;
++        if (o == null || getClass() != o.getClass()) return false;
++        if (!super.equals(o)) return false;
++
++        MailMessage that = (MailMessage) o;
++
++        if (message != null ? !message.equals(that.message) : that.message != null) return false;
++
++        return true;
++    }
++
++}
+\ No newline at end of file
+Index: src/Module4ex2/MailService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/Module4ex2/MailService.java b/src/Module4ex2/MailService.java
+new file mode 100644
+--- /dev/null	(date 1676349414786)
++++ b/src/Module4ex2/MailService.java	(date 1676349414786)
+@@ -0,0 +1,8 @@
++package Module4ex2;
++
++/*
++Интерфейс, который задает класс, который может каким-либо образом обработать почтовый объект.
++*/
++public interface MailService {
++    Sendable processMail(Sendable mail);
++}
+\ No newline at end of file
+Index: src/Module4ex2/Package.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/Module4ex2/Package.java b/src/Module4ex2/Package.java
+new file mode 100644
+--- /dev/null	(date 1676349384043)
++++ b/src/Module4ex2/Package.java	(date 1676349384043)
+@@ -0,0 +1,35 @@
++package Module4ex2;
++
++/*
++Класс, который задает посылку. У посылки есть текстовое описание содержимого и целочисленная ценность.
++*/
++public class Package {
++    private final String content;
++    private final int price;
++
++    public Package(String content, int price) {
++        this.content = content;
++        this.price = price;
++    }
++
++    public String getContent() {
++        return content;
++    }
++
++    public int getPrice() {
++        return price;
++    }
++
++    @Override
++    public boolean equals(Object o) {
++        if (this == o) return true;
++        if (o == null || getClass() != o.getClass()) return false;
++
++        Package aPackage = (Package) o;
++
++        if (price != aPackage.price) return false;
++        if (!content.equals(aPackage.content)) return false;
++
++        return true;
++    }
++}
+\ No newline at end of file
+Index: src/Module4ex2/UntrustworthyMailWorker.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/Module4ex2/UntrustworthyMailWorker.java b/src/Module4ex2/UntrustworthyMailWorker.java
+new file mode 100644
+--- /dev/null	(date 1676349978748)
++++ b/src/Module4ex2/UntrustworthyMailWorker.java	(date 1676349978748)
+@@ -0,0 +1,24 @@
++package Module4ex2;
++
++public class UntrustworthyMailWorker implements MailService{
++
++    public MailService realMailService = new RealMailService();
++    private final MailService[] workers;
++
++    public UntrustworthyMailWorker(MailService[] workers) {
++        this.workers = workers;
++    }
++
++    public MailService getRealMailService() {
++        return realMailService;
++    }
++
++    @Override
++    public Sendable processMail(Sendable mail) {
++        Sendable sb = mail;
++        for (MailService worker : workers) {
++            sb = worker.processMail(sb);
++        }
++        return realMailService.processMail(sb);
++    }
++}
+Index: src/Module4ex2/RealMailService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/Module4ex2/RealMailService.java b/src/Module4ex2/RealMailService.java
+new file mode 100644
+--- /dev/null	(date 1676349430775)
++++ b/src/Module4ex2/RealMailService.java	(date 1676349430775)
+@@ -0,0 +1,13 @@
++package Module4ex2;
++
++/*
++Класс, в котором скрыта логика настоящей почты
++*/
++public class RealMailService implements MailService {
++
++    @Override
++    public Sendable processMail(Sendable mail) {
++        // Здесь описан код настоящей системы отправки почты.
++        return mail;
++    }
++}
+\ No newline at end of file
+Index: src/Module4ex2/Thief.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/Module4ex2/Thief.java b/src/Module4ex2/Thief.java
+new file mode 100644
+--- /dev/null	(date 1676440817071)
++++ b/src/Module4ex2/Thief.java	(date 1676440817071)
+@@ -0,0 +1,30 @@
++package Module4ex2;
++
++public class Thief implements MailService {
++
++    private int minValue;
++    private int stolenValue;
++
++    public Thief(int minValue) {
++        this.minValue = minValue;
++    }
++
++    public int getStolenValue() {
++        this.stolenValue = stolenValue;
++        return stolenValue;
++    }
++
++    @Override
++    public Sendable processMail(Sendable mail) {
++        if (mail instanceof MailPackage) {
++            if (((MailPackage) mail).getContent().getPrice() >= minValue) {
++
++                stolenValue += ((MailPackage) mail).getContent().getPrice();
++                mail = new MailPackage(mail.getFrom(), mail.getTo(), new Package("stones instead of " + ((MailPackage) mail).getContent().getContent(), 0));
++
++            }
++        }
++
++        return mail;
++    }
++}
+Index: src/Module4ex2/Spy.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/Module4ex2/Spy.java b/src/Module4ex2/Spy.java
+new file mode 100644
+--- /dev/null	(date 1676366528832)
++++ b/src/Module4ex2/Spy.java	(date 1676366528832)
+@@ -0,0 +1,27 @@
++package Module4ex2;
++
++import java.util.logging.Logger;
++
++import static Module4ex2.Main.AUSTIN_POWERS;
++
++public class Spy implements MailService{
++
++    public Logger logger = null;
++
++    public Spy(Logger logger) {
++        this.logger = logger;
++    }
++
++    @Override
++    public Sendable processMail(Sendable mail) {
++        if (mail instanceof MailMessage) {
++            String to =  mail.getTo();
++            String from = mail.getFrom();
++            if (from.equals(AUSTIN_POWERS) | to.equals(AUSTIN_POWERS)) {
++                logger.warning("Detected target mail correspondence: from " + from + " to " +  to + " \"" + ((MailMessage) mail).getMessage() + "\"");
++            }
++            else logger.info("Usual correspondence: from " + from + " to " + to);
++        }
++        return mail;
++    }
++}
+Index: src/Module4ex2/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/Module4ex2/Main.java b/src/Module4ex2/Main.java
+new file mode 100644
+--- /dev/null	(date 1676366858951)
++++ b/src/Module4ex2/Main.java	(date 1676366858951)
+@@ -0,0 +1,51 @@
++package Module4ex2;
++
++import java.util.logging.Logger;
++
++public class Main {
++
++    public static final String AUSTIN_POWERS = "Austin Powers";
++    public static final String WEAPONS = "weapons";
++    public static final String BANNED_SUBSTANCE = "banned substance";
++
++    public static void main(String[] args) {
++        MailService spy = new Spy(Logger.getLogger(MailService.class.getName()));
++        MailService thief = new Thief(10);
++        MailService inspector = new Inspector();
++        MailService[] msArray = {spy, thief, inspector};
++        MailMessage mail1 = new MailMessage("Romeo", "Juliet", "I love you!");
++        MailMessage mail2 = new MailMessage("Austin Powers", "James Bond", "Big secret!");
++        MailPackage mail3 = new MailPackage("Romeo", "Juliet", new Package("Flowers", 15));
++        MailPackage mail4 = new MailPackage("Romeo", "Juliet", new Package("Flowers", 25));
++        MailPackage mail5 = new MailPackage("Austin Powers", "James Bond", new Package("weapons", 5));
++
++        UntrustworthyMailWorker umw = new UntrustworthyMailWorker(msArray);
++        try {
++            umw.processMail(mail1);
++        } catch (RuntimeException re) {
++            System.out.println(re.getMessage());
++        }
++        try {
++            umw.processMail(mail2);
++        } catch (RuntimeException re) {
++            System.out.println(re.getMessage());
++        }
++        try {
++            umw.processMail(mail3);
++        } catch (RuntimeException re) {
++            System.out.println(re.getMessage());
++        }
++        try {
++            umw.processMail(mail4);
++        } catch (RuntimeException re) {
++            System.out.println(re.getMessage());
++        }
++        try {
++            umw.processMail(mail5);
++        } catch (RuntimeException re) {
++            System.out.println(re.getMessage());
++        }
++
++        System.out.println("Thief have stolen $" + ((Thief)thief).getStolenValue() + "!");
++    }
++}
+Index: src/Module4ex2/Inspector.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/Module4ex2/Inspector.java b/src/Module4ex2/Inspector.java
+new file mode 100644
+--- /dev/null	(date 1676367359929)
++++ b/src/Module4ex2/Inspector.java	(date 1676367359929)
+@@ -0,0 +1,37 @@
++package Module4ex2;
++
++import static Module4ex2.Main.BANNED_SUBSTANCE;
++import static Module4ex2.Main.WEAPONS;
++
++public class Inspector implements MailService{
++
++    public class  IllegalPackageException extends RuntimeException {
++        public IllegalPackageException() {
++
++        }
++        public IllegalPackageException(String message) {
++
++        }
++    }
++    public class StolenPackageException extends RuntimeException {
++        public StolenPackageException() {
++        }
++
++        public StolenPackageException(String message) {
++
++        }
++    }
++
++    @Override
++    public Sendable processMail(Sendable mail) {
++        if (mail instanceof MailPackage) {
++            if (((MailPackage) mail).getContent().getContent().equals(WEAPONS) | ((MailPackage) mail).getContent().getContent().equals(BANNED_SUBSTANCE)) {
++                throw new IllegalPackageException();
++            }
++            if (((MailPackage) mail).getContent().getContent().contains("stones")) {
++                throw new StolenPackageException();
++            }
++        }
++        return mail;
++    }
++}
+Index: src/FuncInter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/FuncInter.java b/src/FuncInter.java
+new file mode 100644
+--- /dev/null	(date 1677659354499)
++++ b/src/FuncInter.java	(date 1677659354499)
+@@ -0,0 +1,20 @@
++import java.util.Objects;
++import java.util.function.Function;
++import java.util.function.Predicate;
++
++public class FuncInter {
++    public static void main(String[] args) {
++        Predicate<Object> condition = Objects::isNull;
++        Function<Object, Integer> ifTrue = obj -> 0;
++        Function<CharSequence, Integer> ifFalse = CharSequence::length;
++        Function<String, Integer> safeStringLength = ternaryOperator(condition, ifTrue, ifFalse);
++    }
++    public static <T, U> Function<T, U> ternaryOperator(
++            Predicate<? super T> condition,
++            Function<? super T, ? extends U> ifTrue,
++            Function<? super T, ? extends U> ifFalse) {
++
++        return null;
++
++    }
++}
+Index: src/Learning.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/Learning.java b/src/Learning.java
+new file mode 100644
+--- /dev/null	(date 1677659296960)
++++ b/src/Learning.java	(date 1677659296960)
+@@ -0,0 +1,34 @@
++import java.util.HashSet;
++import java.util.Set;
++
++public class Learning {
++    public static void main(String[] args) {
++        Set<Integer> set1 = new HashSet<>();
++        set1.add(1);
++        set1.add(2);
++        set1.add(3);
++
++        Set<Integer> set2 = new HashSet<>();
++        set2.add(0);
++        set2.add(1);
++        set2.add(2);
++
++        System.out.println(symmetricDifference(set1, set2));
++    }
++
++    public static <T> Set<T> symmetricDifference(Set<? extends T> set1, Set<? extends T> set2) {
++        Set<T> result = new HashSet<>();
++        for(T s1 : set1) {
++            if (!set2.contains(s1)){
++                result.add(s1);
++            }
++        } for(T s2 : set2) {
++            if (!set1.contains(s2)){
++                result.add(s2);
++            }
++        }
++        return result;
++    }
++}
++
++
+Index: src/JavaBlackBelt/collections/StackExample2.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/JavaBlackBelt/collections/StackExample2.java b/src/JavaBlackBelt/collections/StackExample2.java
+new file mode 100644
+--- /dev/null	(date 1677824563059)
++++ b/src/JavaBlackBelt/collections/StackExample2.java	(date 1677824563059)
+@@ -0,0 +1,20 @@
++package JavaBlackBelt.collections;
++
++import java.util.Stack;
++
++public class StackExample2 {
++    public static void main(String[] args) {
++        Stack<String> stack = new Stack<>();
++        stack.push("Artur");
++        stack.push("Misha");
++        stack.push("Oleg");
++        stack.push("Katya");
++        System.out.println(stack);
++//        while (!stack.isEmpty()) {
++//            System.out.println(stack.pop());
++//            System.out.println(stack);
++//        }
++        System.out.println(stack.peek());
++        System.out.println(stack);
++    }
++}
+Index: .idea/uiDesigner.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/uiDesigner.xml b/.idea/uiDesigner.xml
+new file mode 100644
+--- /dev/null	(date 1677823618787)
++++ b/.idea/uiDesigner.xml	(date 1677823618787)
+@@ -0,0 +1,124 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="Palette2">
++    <group name="Swing">
++      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
++      </item>
++      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
++      </item>
++      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.svg" removable="false" auto-create-binding="false" can-attach-label="true">
++        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
++        <initial-values>
++          <property name="text" value="Button" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="RadioButton" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="CheckBox" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JLabel" icon="/com/intellij/uiDesigner/icons/label.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="Label" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JPasswordField" icon="/com/intellij/uiDesigner/icons/passwordField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JFormattedTextField" icon="/com/intellij/uiDesigner/icons/formattedTextField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTextArea" icon="/com/intellij/uiDesigner/icons/textArea.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTextPane" icon="/com/intellij/uiDesigner/icons/textPane.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JEditorPane" icon="/com/intellij/uiDesigner/icons/editorPane.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JComboBox" icon="/com/intellij/uiDesigner/icons/comboBox.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="2" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JTable" icon="/com/intellij/uiDesigner/icons/table.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JList" icon="/com/intellij/uiDesigner/icons/list.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="2" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTree" icon="/com/intellij/uiDesigner/icons/tree.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
++          <preferred-size width="200" height="200" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
++          <preferred-size width="200" height="200" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
++      </item>
++      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
++          <preferred-size width="-1" height="20" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JToolBar$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
++      </item>
++      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
++      </item>
++    </group>
++  </component>
++</project>
+\ No newline at end of file
+Index: src/JavaBlackBelt/collections/StackExample.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/JavaBlackBelt/collections/StackExample.java b/src/JavaBlackBelt/collections/StackExample.java
+new file mode 100644
+--- /dev/null	(date 1677824346636)
++++ b/src/JavaBlackBelt/collections/StackExample.java	(date 1677824346636)
+@@ -0,0 +1,23 @@
++package JavaBlackBelt.collections;
++//Last In First Out (LIFO)
++public class StackExample {
++    static void abc1(){
++        System.out.println("abc1 starts");
++        System.out.println("abc1 ends");
++    }
++    static void abc2(){
++        System.out.println("abc2 starts");
++        abc1();
++        System.out.println("abc2 ends");
++    }
++    static void abc3(){
++        System.out.println("abc3 starts");
++        abc2();
++        System.out.println("abc3 ends");
++    }
++    public static void main(String[] args) {
++        System.out.println("main starts");
++        abc3();
++        System.out.println("main ends");
++    }
++}
+Index: src/JavaBlackBelt/collections/VectorExample.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/JavaBlackBelt/collections/VectorExample.java b/src/JavaBlackBelt/collections/VectorExample.java
+new file mode 100644
+--- /dev/null	(date 1677823931663)
++++ b/src/JavaBlackBelt/collections/VectorExample.java	(date 1677823931663)
+@@ -0,0 +1,19 @@
++package JavaBlackBelt.collections;
++
++import java.util.Vector;
++
++public class VectorExample {
++    public static void main(String[] args) {
++        Vector<String> vector = new Vector<>();
++        vector.add("Artur");
++        vector.add("Misha");
++        vector.add("Oleg");
++        vector.add("Katya");
++        System.out.println(vector);
++        System.out.println(vector.firstElement());
++        System.out.println(vector.lastElement());
++        vector.remove(2);
++        System.out.println(vector);
++        System.out.println(vector.get(1));
++    }
++}
+Index: src/JavaBlackBelt/Asd.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1251
+===================================================================
+diff --git a/src/JavaBlackBelt/Asd.java b/src/JavaBlackBelt/Asd.java
+new file mode 100644
+--- /dev/null	(date 1677823859086)
++++ b/src/JavaBlackBelt/Asd.java	(date 1677823859086)
+@@ -0,0 +1,4 @@
++package JavaBlackBelt;
++
++public class Asd {
++}
